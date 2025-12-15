@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabaziso Alfred Mtupa Photography Portfolio</title>
+  <meta name="description" content="Gabaziso Alfred Mtupa is a professional photographer based in Bulawayo, Zimbabwe specializing in portraits, lifestyle and event photography.">
+ <meta name="keywords" content="Photographer Bulawayo, Zimbabwe Photographer, Portrait Photography, Event Photography, Lifestyle Photography">
+ <meta name="author" content="Gabaziso Alfred Mtupa">
+
+<!-- Social preview -->
+ <meta property="og:title" content="Gabaziso Alfred Mtupa | Photography Portfolio">
+ <meta property="og:description" content="Visual stories through portraits, lifestyle and events.">
+ <meta property="og:image" content="images/hero.jpg">
+ <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="style.css" />
+  <a href="https://wa.me/263784160174" class="whatsapp" target="_blank">
+  WhatsApp Me
+</a>
+<script>
+  // Lightbox
+  const images = document.querySelectorAll('.grid img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  // Scroll animation
+  const faders = document.querySelectorAll('section, .grid img');
+  const appear = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  faders.forEach(fade => {
+    fade.classList.add('fade-in');
+    appear.observe(fade);
+  });
+</script>
+
+
+
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="lightbox" id="lightbox">
+  <img src="" alt="Expanded Image">
+</div>
+
+      <div class="profile">
+        <img src="images/logo-placeholder (2).jpg" alt="Gabaziso Alfred Mtupa" class="logo" />
+        <div>
+          <h1>Gabaziso Alfred Mtupa</h1>
+          <p>Portraits • Lifestyle • Events</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        
+
+      </nav>
+      
+    </div>
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h2>Visual stories that feel like memory.</h2>
+        <p>I’m Gabaziso — a Bulawayo-based photographer focusing on portraits, lifestyle and event photography. I capture authentic moments with natural light and thoughtful composition.</p>
+        <a href="#portfolio" class="btn">View Work</a>
+        <a href="#contact" class="btn dark">Get in Touch</a>
+      </div>
+      <div class="hero-img">
+        <img src="images/Potrait 2.jpeg" alt="Hero Image" />
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about container">
+    <h3>About Me</h3>
+    <p>I’m a professional photographer with over 5 years of experience capturing portraits, lifestyle moments and events. My approach emphasizes natural light, candid emotion and composed frames that stand the test of time. I work with private clients, brands and event planners to create images that tell clear, human stories.</p>
+  </section>
+
+  <section id="portfolio" class="portfolio container">
+    <h3>Portfolio</h3>
+    <h4>Portraits</h4>
+    <div class="grid">
+      <img src="images/Potrait 17.jpeg" alt="Portrait 1">
+      <img src="images/Potrait 12.jpeg" alt="Portrait 2">
+      <img src="images/Potrait 20.jpeg" alt="Portrait 3">
+      <img src="images/Potrait 24.jpeg" alt="Portrait 4">
+    </div>
+
+    <h4>Lifestyle</h4>
+    <div class="grid">
+      <img src="images/Potrait 6.jpeg" alt="Lifestyle 1">
+      <img src="images/Potrait 3.jpeg" alt="Lifestyle 2">
+      <img src="images/Potrait 5.jpeg" alt="Lifestyle 3">
+      <img src="images/Potrait 9.jpeg" alt="Lifestyle 4">
+    </div>
+
+    <h4>Events</h4>
+    <div class="grid">
+      <img src="images/Potrait 10.jpeg" alt="Event 1">
+      <img src="images/Potrait 11.jpeg" alt="Event 2">
+      <img src="images/Potrait 15.jpeg" alt="Event 3">
+      <img src="images/Potrait 25.jpeg" alt="Event 4">
+    </div>
+  </section>
+
+<section id="testimonials" class="testimonials container">
+  <h3>Client Testimonials</h3>
+  <p class="section-intro">What clients say about working with me</p>
+
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p>
+        “Gabaziso captured our event beautifully. Every image told a story.
+        Professional, punctual, and very creative.”
+      </p>
+      <h5>— Event Client, Bulawayo</h5>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        “The portrait session was relaxed and fun. The final photos exceeded
+        my expectations. Highly recommended.”
+      </p>
+      <h5>— Portrait Client</h5>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        “Great eye for detail and natural light. The lifestyle shoot was clean,
+        modern, and exactly what we needed for our brand.”
+      </p>
+      <h5>— Brand Client</h5>
+    </div>
+  </div>
+</section>
+
+
+  <section id="contact" class="contact container">
+  <h3>Contact & Booking</h3>
+  <p>Let’s work together. Fill in the form below or reach out directly.</p>
+
+  <form class="contact-form" action="https://formspree.io/f/xyzzabcd" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="service" placeholder="Type of Shoot (Portrait / Event / Lifestyle)">
+    <textarea name="message" placeholder="Tell me about your project..." required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+
+  <div class="contact-info">
+    <p><strong>Email:</strong> gabazisomthupha@gmail.com</p>
+    <p><strong>Phone:</strong> +263 784160174</p>
+    <p><strong>Instagram:</strong> @gabazisophotography</p>
+    <p><strong>Location:</strong> Bulawayo, Zimbabwe</p>
+  </div>
+</section>
+
+  <footer>
+    <p>© 2025 Gabaziso Alfred Mtupa — All rights reserved.</p>
+  </footer>
+
+  <script>
+  const toggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('light');
+    toggle.textContent = body.classList.contains('light') ? '☀️' : '🌙';
+  });
+</script>
+
+</body>
+</html>
